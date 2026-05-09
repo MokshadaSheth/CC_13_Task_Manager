@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 50px;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+  animation: slideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #667eea;
+  margin-bottom: 45px;
+  font-size: 3.2em;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.input-box {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 16px 22px;
+  border: 2.5px solid #e8e8e8;
+  border-radius: 15px;
+  font-size: 1.05em;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.input-box input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15), 0 8px 20px rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px);
+}
+
+.input-box input::placeholder {
+  color: #bbb;
+  font-weight: 400;
+}
+
+.input-box button {
+  padding: 16px 40px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.05em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.input-box button:hover {
+  background: #5568d3;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+}
+
+.input-box button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: #fafbff;
+  border-radius: 16px;
+  border-left: 5px solid #667eea;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInLeft 0.4s ease-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.task-card:hover {
+  background: white;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  transform: translateX(6px);
+  border-left-color: #764ba2;
+}
+
+.task-card span {
+  flex: 1;
+  font-size: 1.15em;
+  color: #2d3748;
+  font-weight: 600;
+  word-break: break-word;
+  letter-spacing: 0.3px;
+}
+
+.task-card span.completed {
+  text-decoration: line-through;
+  color: #a0a0a0;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+.task-card div {
+  display: flex;
+  gap: 10px;
+  margin-left: 16px;
+}
+
+.task-card button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2.5px solid transparent;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.task-card button:first-child {
+  background: #e3f2fd;
+  color: #1976d2;
+  border-color: #90caf9;
+}
+
+.task-card button:first-child:hover {
+  background: #2196F3;
+  color: white;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+}
+
+.task-card button:first-child:active {
+  transform: scale(0.98);
+}
+
+.task-card button:last-child {
+  background: #ffebee;
+  color: #c62828;
+  border-color: #ef9a9a;
+}
+
+.task-card button:last-child:hover {
+  background: #f44336;
+  color: white;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+}
+
+.task-card button:last-child:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+
+  .input-box {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .input-box input,
+  .input-box button {
+    width: 100%;
+  }
+
+  .task-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .task-card span {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+  .task-card div {
+    width: 100%;
+    margin-left: 0;
+    gap: 8px;
+  }
+
+  .task-card button {
+    flex: 1;
+    padding: 10px 12px;
+  }
+}
