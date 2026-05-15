@@ -261,6 +261,11 @@ Grant permission to current user:
 icacls taskMng.pem /grant:r "$($env:USERNAME):(R)"
 ```
 
+Note for Linux Machine Use:
+```powershell
+chmod 400 Deployment_key.pem
+```
+
 Remove unnecessary users:
 
 ```powershell
