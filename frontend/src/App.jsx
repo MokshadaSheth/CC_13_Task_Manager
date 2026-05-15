@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 function App() {
-  const API = 'http://localhost:5000';
+  const API = '';
   const [title, setTitle] = useState('');
   const [tasks, setTasks] = useState([]);
 
